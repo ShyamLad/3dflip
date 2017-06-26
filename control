@@ -1,0 +1,9 @@
+Package: com.ladshyam.3dflip
+Name: 3dflip
+Depends: mobilesubstrate
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: An awesome MobileSubstrate tweak!
+Maintainer: ShyamLad
+Author: ShyamLad
+Section: Tweaks
