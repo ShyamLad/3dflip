@@ -1,4 +1,4 @@
 # 3dflip
 
 
-3D Touch the right or left half of the screen when rearranging apps to change pages. Tested on IOS 9 and IOS 10.
+Force touch on the right or left half of the screen when rearranging apps to move pages forward or backward. Tested on IOS 9 and IOS 10.

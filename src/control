@@ -1,5 +1,5 @@
-Package: com.ladshyam.3dflip
-Name: 3dflip
+Package: com.ladshyam.forceForward
+Name: forceForward
 Depends: mobilesubstrate
 Version: 0.0.1
 Architecture: iphoneos-arm
