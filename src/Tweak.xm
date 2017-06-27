@@ -37,13 +37,12 @@ static BOOL hasBeenForceTapped = NO;
       // Make sure we're not at the far left or right page already.
       if ((shiftRight && currentPage + 1 < pc.numberOfPages) || (!shiftRight && currentPage > 1)) {
         AudioServicesPlaySystemSound(1520); // Pop feedback.
-        // [rfv pageControl:pc didRecieveTouchInDirection:shiftRight ? 1 : 0];  //This switches pages but fails to update icon location in changed icon list
-        if(shiftRight){
-          [rfc _doAutoScrollByPageCount:1]; //this updates icon location after page has been changed.
-        }
-        else{
-          [rfc _doAutoScrollByPageCount:-1];
-        }
+
+        // This switches pages but fails to update icon location in changed icon list.
+        // [rfv pageControl:pc didRecieveTouchInDirection:shiftRight ? 1 : 0];
+
+        // This updates icon location after page has been changed.
+        [rfc _doAutoScrollByPageCount:shiftRight ? 1 : -1];
       } else {
         AudioServicesPlaySystemSound(1521); // Error feedback.
       }
