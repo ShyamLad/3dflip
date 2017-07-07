@@ -8,3 +8,8 @@ forceForward_FRAMEWORKS=AudioToolbox
 
 after-install::
 	install.exec "killall -9 SpringBoard"
+
+
+BUNDLE_NAME = imageBundle
+imageBundle_INSTALL_PATH = /Library/Application Support/forceForward
+include $(THEOS)/makefiles/bundle.mk
