@@ -42,7 +42,6 @@
 
   @property(nonatomic, assign) NSUInteger dockEdge;
   @property(nonatomic, assign) NSInteger currentPageIndex;
-  @property(nonatomic,assign,readwrite) CGRect frame;
   -(void)pageControl:(id)var1 didRecieveTouchInDirection:(int)var2;
   -(void)addSubview:(id)var1;
 
@@ -64,8 +63,7 @@
 @end
 
 @interface SBIconView:UIView
-	@property(nonatomic, retain) _UIBackdropView *blurViewRight;
-  @property(nonatomic, retain) _UIBackdropView *blurViewLeft;
+	@property(nonatomic, retain, setter=setBlurView:) _UIBackdropView *blurView;
 	@property(nonatomic, retain) _UIBackdropViewSettings *noBlurSettings;
 	@property(nonatomic, retain) _UIBackdropViewSettings *fullBlurSettings;
 
