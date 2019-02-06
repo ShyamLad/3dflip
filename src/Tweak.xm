@@ -15,10 +15,6 @@ static float currentForceSaved = 0;
 %property(nonatomic, retain) _UIBackdropViewSettings *noBlurSettings;
 %property(nonatomic, retain) _UIBackdropViewSettings *fullBlurSettings;
 
--(void)setEditing:(BOOL)var1 animated:(BOOL)var2{
-
-}
-
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
   _UIBackdropViewSettings *localNoBlurSettings = [_UIBackdropViewSettings settingsForStyle:-2];
@@ -29,11 +25,10 @@ static float currentForceSaved = 0;
     localNoBlurSettings.colorTintAlpha = 0;
     _UIBackdropViewSettings *localFullBlurSettings = [NSClassFromString(@"_UIBackdropViewSettings") settingsForStyle:-2];
     self.fullBlurSettings = localFullBlurSettings;
-    localFullBlurSettings.blurRadius = 15;
-    localFullBlurSettings.grayscaleTintAlpha = 0;
+    localFullBlurSettings.blurRadius = 5;
+    localFullBlurSettings.grayscaleTintAlpha = .5;
     localFullBlurSettings.colorTint = [UIColor blackColor];
-    localFullBlurSettings.colorTintAlpha = 0;
-    localFullBlurSettings.saturationDeltaFactor = 1.8;
+    localFullBlurSettings.colorTintAlpha = .15;
 
 
   NSBundle *bundle = [[NSBundle alloc] initWithPath:kBundlePath];//Get the Bundle
@@ -57,7 +52,7 @@ static float currentForceSaved = 0;
   [rfv addSubview:self.imageView];
 
 
-  [bundle release];
+
   %orig;
 
 }
@@ -131,7 +126,7 @@ static float currentForceSaved = 0;
         [rfc _doAutoScrollByPageCount:shiftRight ? 1 : -1];
         [UIView animateWithDuration:.75 animations:^{
           [self.blurView transitionIncrementallyToSettings:self.fullBlurSettings weighting:1];
-          self.imageView.alpha = 2.5;
+          self.imageView.alpha = 1.5;
 
           }];
           [UIView animateWithDuration:.4 animations:^{
